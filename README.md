@@ -1,4 +1,4 @@
-<h2>Dump every class which in running in the JVM.</h2>
+<h2>Dump every class which is running in the JVM.</h2>
 
 This tool can be used for dumping classes dynamically loaded
 using some kind of ClassLoader. (Malware, Minecraft Clients)
