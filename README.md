@@ -19,4 +19,4 @@ _add -javaagent:Dumper.jar to Launcher Arguments_</br>
 **You can convert the folder with classes into a .jar file using the Dumper as normal java application.</br>**
 ![Screenshot_4](./screenshots/Screenshot_4.jpg) </br>
 
-Before using: Some programs can have checks for this kind of dump, and you can be banned if is a Minecraft Client. A perfect example is: [Anti-Dump](https://github.com/zzurio/Anti-Dump), but this can be easily bypassed changing the value in strings using a tool as Recaf or IDA (if it uses native files in the security). 
+Before using: Some programs can have checks for this kind of dump, and you can be banned if is a Minecraft Client. A perfect example is: [Anti-Dump](https://github.com/zzurio/Anti-Dump), but this can be easily bypassed changing the value in strings using a tool as Recaf or IDA (if it uses native files for Anti-Dump check). 
