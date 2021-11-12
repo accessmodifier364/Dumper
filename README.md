@@ -1,9 +1,9 @@
-#Dump every class which in running in the JVM.
+<h2>Dump every class which in running in the JVM.</h2>
 
 This tool can be used for dumping classes dynamically loaded
 using some kind of ClassLoader. (Malware, Minecraft Clients)
 
-##Usage:
+###Usage:
 
 **With a normal Java Application:**</br>
 _java -javaagent:Dumper.jar -jar program.jar_</br>
@@ -13,7 +13,7 @@ _java -javaagent:Dumper.jar -jar program.jar_</br>
 _add -javaagent:Dumper.jar to Launcher Arguments_</br>
 ![Screenshot_2](./screenshots/Screenshot_2.jpg) </br>
 
-**After dumping you will have a folder in your desktop with the classes.**
+**After dumping you will have a folder in your desktop with the classes.**</br>
 ![Screenshot_3](./screenshots/Screenshot_3.jpg) </br>
 
 **You can convert the folder with classes into a .jar file using the Dumper as normal java application.</br>**
