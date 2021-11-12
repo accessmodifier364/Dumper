@@ -24,23 +24,29 @@ import java.util.stream.Stream;
 
 public class Dumper {
 
-    public static String directory = System.getenv("USERPROFILE") + "\\Desktop\\dumpedclasses";
+    public static String directory = System.getenv("USERPROFILE") + "\\Desktop\\dump\\";
 
     public static void premain(String agentArgs, Instrumentation inst) {
         System.out.println("Loading Dumper...");
+
         try {
-            Files.createDirectory(Paths.get(directory));
+            Files.createDirectories(Paths.get(directory + "classes"));
         } catch (IOException e) {
             System.out.println("Error creating the main directory: " + e.getMessage());
         }
+
         inst.addTransformer(new Transformer());
     }
 
     public static void main(String[] args) throws IOException { //Put the dumped classes into a jar file.
-        JarOutputStream jarOutputStream = new JarOutputStream(new FileOutputStream(directory + ".jar"));
+        System.out.println("Creating the Jar File...");
+        JarOutputStream jarOutputStream = new JarOutputStream(new FileOutputStream(directory + "dump.jar"));
 
         for (File f : getFilesInDirectory(directory)) {
-            JarEntry jarEntry = new JarEntry(f.toPath().toString().replace(directory + "\\", ""));
+            if (!f.getName().endsWith(".class")) continue;
+            String newName = f.toPath().toString().replace(directory + "classes\\", "");
+            System.out.println("Adding class " + newName);
+            JarEntry jarEntry = new JarEntry(newName);
             jarOutputStream.putNextEntry(jarEntry);
             jarOutputStream.write(Files.readAllBytes(f.toPath()));
             jarOutputStream.closeEntry();

@@ -33,14 +33,14 @@ public class Transformer implements ClassFileTransformer {
 
             if (newName.contains("/")) {
                 try {
-                    Files.createDirectories(Paths.get(directory + "\\" + newName.substring(0, newName.lastIndexOf('/'))));
+                    Files.createDirectories(Paths.get(directory + "classes\\" + newName.substring(0, newName.lastIndexOf('/'))));
                 } catch (IOException e) {
                     System.out.println("Error creating subdirectory: " + e.getMessage());
                 }
             }
 
             try {
-                FileOutputStream fos = new FileOutputStream(directory + "\\" + newName);
+                FileOutputStream fos = new FileOutputStream(directory + "classes\\" + newName);
                 fos.write(classfileBuffer);
                 fos.close();
             } catch (IOException e) {
@@ -55,7 +55,7 @@ public class Transformer implements ClassFileTransformer {
         if (className == null) return false;
 
         for (String e : exclusions) {
-            if (className.replace('/', '.').startsWith(e)) {
+            if (className.startsWith(e)) {
                 return false;
             }
         }
@@ -64,8 +64,8 @@ public class Transformer implements ClassFileTransformer {
     }
 
     private final List<String> exclusions = Arrays.asList(
-            "java", "sun", "javax", "jdk", "net.minecraft",
-            "com.sun", "org.spongepowered"
+            "java", "sun", "javax", "jdk", "net/minecraft",
+            "com/sun", "org/spongepowered"
     );
 
 }
