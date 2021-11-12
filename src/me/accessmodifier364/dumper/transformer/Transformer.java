@@ -63,6 +63,7 @@ public class Transformer implements ClassFileTransformer {
         return true;
     }
 
+    //This classes won't be dumped from the JVM.
     private final List<String> exclusions = Arrays.asList(
             "java", "sun", "javax", "jdk", "net/minecraft",
             "com/sun", "org/spongepowered"

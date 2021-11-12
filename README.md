@@ -3,7 +3,7 @@
 This tool can be used for dumping classes dynamically loaded
 using some kind of ClassLoader. (Malware, Minecraft Clients)
 
-###Usage:
+### Usage:
 
 **With a normal Java Application:**</br>
 _java -javaagent:Dumper.jar -jar program.jar_</br>
