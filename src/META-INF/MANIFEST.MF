@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Premain-Class: me.accessmodifier364.dumper.Dumper
-Main-Class: me.accessmodifier364.dumper.Dumper
